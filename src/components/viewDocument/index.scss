@@ -1,0 +1,57 @@
+.editor-container_classic-editor {
+  .editor-container__editor {
+    width: 100%;
+  }
+}
+
+.ck-content {
+  min-height: 200px;
+
+  ul {
+    margin-left: 24px;
+    li {
+      line-height: 24px;
+      list-style: disc;
+    }
+  }
+
+  blockquote {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+  }
+
+  .image {
+    img {
+      border: 1px solid #dadada;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+  }
+
+  a {
+    color: #007aff;
+
+    &:hover {
+      color: #0062cc;
+    }
+  }
+}
+
+.ck {
+  table {
+    tr {
+      border: 1px solid #dadada;
+
+      td {
+        height: 40px;
+        padding: 0 16px !important;
+      }
+
+      &:first-child {
+        height: 44px;
+        background-color: #f0f0f0;
+        font-weight: 600;
+      }
+    }
+  }
+}
