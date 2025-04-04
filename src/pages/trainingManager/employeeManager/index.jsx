@@ -1,12 +1,22 @@
-import { Button, Dropdown, Input, Pagination, Select, Table, Tag } from "antd";
+import {
+  Button,
+  Dropdown,
+  Image,
+  Input,
+  Pagination,
+  Select,
+  Table,
+  Tag,
+} from "antd";
 import { CiFilter } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
-import { IoSearchOutline } from "react-icons/io5";
+import { IoSearchOutline, IoSettingsOutline } from "react-icons/io5";
 import { TfiReload } from "react-icons/tfi";
 import FormEmployee from "./FormEmployee";
 import { useState } from "react";
 import { useFetchData } from "@/hooks/useFetchData";
 import { FaCaretDown } from "react-icons/fa";
+import { SiMicrosoftexcel } from "react-icons/si";
 
 export default function EmployeeManager() {
   const [isShowForm, setIsShowForm] = useState(false);
@@ -15,7 +25,7 @@ export default function EmployeeManager() {
 
   const columns = [
     {
-      title: "Hình ảnh",
+      title: <div className="text-center">Hình ảnh</div>,
       dataIndex: "image",
     },
     {
@@ -35,8 +45,8 @@ export default function EmployeeManager() {
       dataIndex: "phoneNumber",
     },
     {
-      title: "Địa chỉ",
-      dataIndex: "address",
+      title: "Trạng thái",
+      dataIndex: "status",
     },
     {
       title: "Vai trò",
@@ -78,7 +88,11 @@ export default function EmployeeManager() {
   const formatData = (employees) => {
     return employees.map((employee) => ({
       key: employee.id,
-      image: <img src={employee.avatar} alt="Avatar" width={30} height={30} />,
+      image: (
+        <div className="flex items-center justify-center">
+          <img src={employee.avatar} alt="Avatar" width={30} height={30} />
+        </div>
+      ),
       name: employee.fullName,
       gender:
         employee.gender === 0 ? "Nam" : employee.gender === 1 ? "Nữ" : "Khác",
@@ -132,19 +146,18 @@ export default function EmployeeManager() {
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between max-w-full">
           <h3 className="text-[24px] font-semibold">Nhân viên</h3>
-          <Button onClick={handleShowForm} type="primary" className="h-9">
+          <Button className="h-[32px]" onClick={handleShowForm} type="primary">
             Thêm mới nhân viên
           </Button>
         </div>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-5">
-            <div className="h-9 flex items-center gap-3 px-4 rounded-3xl border hover:border-gray-400 transition-all">
+            <div className="h-[32px] flex items-center gap-3 px-4 rounded-3xl border hover:border-gray-400 transition-all">
               <span>Thực hiện hàng loạt</span>
               <FaCaretDown className="cursor-pointer hover:text-gray-700" />
             </div>
             <Select
-              className="h-9"
               defaultValue="lucy"
               style={{
                 width: 200,
@@ -157,15 +170,21 @@ export default function EmployeeManager() {
               ]}
             />
 
-            <div className="size-9 border rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-all">
+            <div className="size-[32px] border rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-all">
               <CiFilter size={20} />
+            </div>
+            <div className="size-[32px] border rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-all">
+              <SiMicrosoftexcel className="text-green-700" size={20} />
+            </div>
+            <div className="size-[32px] border rounded-md flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-all">
+              <IoSettingsOutline className="text-gray-800" size={20} />
             </div>
           </div>
           <div className="flex items-center gap-5">
             <div className="relative flex items-center">
               <Input
                 placeholder="Tìm kiếm theo tên hoặc email"
-                className="h-9 w-[300px] pr-10"
+                className="h-[32px] w-[300px] pr-10"
               />
               <IoSearchOutline
                 size={20}
@@ -174,7 +193,7 @@ export default function EmployeeManager() {
             </div>
             <TfiReload
               title="Làm mới dữ liệu"
-              size={24}
+              size={20}
               className="text-gray-500 hover:text-gray-700 cursor-pointer transition-all"
             />
           </div>

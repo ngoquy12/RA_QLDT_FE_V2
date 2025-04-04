@@ -8,9 +8,9 @@ export default function FormEmployee({ onClose }) {
     setComponentVariant(variant);
   };
   return (
-    <div className="fixed top-0 right-0 bottom-0 left-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center z-30">
+    <div className="fixed top-0 right-0 bottom-0 z-50 left-0 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
       <Form
-        className="max-w-[600px] min-w-[550px] bg-white px-6 py-5 rounded-md"
+        className="max-w-[700px] min-w-[700px] bg-white px-6 py-5 rounded-md"
         name="validateOnly"
         layout="vertical"
         onValuesChange={onFormVariantChange}

@@ -16,7 +16,7 @@ export default function Dashboard() {
 
           {/* Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6">
               <h3 className="text-gray-500 text-sm font-medium">
                 Tổng số học viên
               </h3>
@@ -28,7 +28,7 @@ export default function Dashboard() {
                 </span>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6">
               <h3 className="text-gray-500 text-sm font-medium">
                 Khóa học đang hoạt động
               </h3>
@@ -40,7 +40,7 @@ export default function Dashboard() {
                 </span>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6">
               <h3 className="text-gray-500 text-sm font-medium">
                 Tổng số giảng viên
               </h3>
@@ -52,7 +52,7 @@ export default function Dashboard() {
                 </span>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6">
               <h3 className="text-gray-500 text-sm font-medium">
                 Tỷ lệ hoàn thành khóa học
               </h3>
@@ -68,7 +68,7 @@ export default function Dashboard() {
 
           {/* Detailed Information Sections */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 Phân bố học viên theo hệ đào tạo
               </h3>
@@ -115,7 +115,7 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 Top 5 khóa học phổ biến
               </h3>
@@ -165,7 +165,7 @@ export default function Dashboard() {
 
           {/* Additional Information Sections */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 Thống kê tài chính
               </h3>
@@ -197,7 +197,7 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow p-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
                 Hoạt động gần đây
               </h3>

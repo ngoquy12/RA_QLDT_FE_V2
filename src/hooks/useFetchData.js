@@ -11,7 +11,6 @@ export function useFetchData(endPoint) {
     const fetchData = async () => {
       try {
         const response = await axiosInstance[HttpMethods.GET](endPoint);
-        console.log(response);
 
         setData(response.data);
       } catch (err) {

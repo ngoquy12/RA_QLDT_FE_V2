@@ -1,5 +1,5 @@
-import { Avatar, Button, Dropdown, Modal, Tooltip } from "antd";
-import React, { useState } from "react";
+import { Avatar, Button, Dropdown, Modal } from "antd";
+import { useState } from "react";
 import { FaRegUser } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { GoBellFill, GoHistory } from "react-icons/go";
@@ -9,8 +9,10 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { PiDotsThreeCircle } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
+import { AiOutlineMenuFold } from "react-icons/ai";
+import { AiOutlineMenuUnfold } from "react-icons/ai";
 
-export default function HeaderLayout() {
+export default function HeaderLayout({ isShowMenu, onToggleMenu }) {
   const navigate = useNavigate();
 
   const [isShowModal, setIsShowModal] = useState(false);
@@ -97,6 +99,7 @@ export default function HeaderLayout() {
               Hủy
             </Button>
             <Button
+              loading
               onClick={handleLogout}
               className="h-9"
               type="primary"
@@ -115,15 +118,29 @@ export default function HeaderLayout() {
 
       <header className="w-full h-16 bg-white border-b items-center px-5 flex justify-between">
         <div className="flex gap-2">
+          {isShowMenu === "show" ? (
+            <AiOutlineMenuFold
+              onClick={onToggleMenu}
+              size={24}
+              className="text-gray-600 hover:text-gray-700 transition-all cursor-pointer"
+            />
+          ) : (
+            <AiOutlineMenuUnfold
+              onClick={onToggleMenu}
+              size={24}
+              className="text-gray-600 hover:text-gray-700 transition-all cursor-pointer"
+            />
+          )}
+
           <GrFormPrevious
             onClick={handlePreviousPage}
             size={24}
-            className="text-gray-800 hover:text-gray-600 cursor-pointer"
+            className="text-gray-600 hover:text-gray-700 transition-all cursor-pointer"
           />
           <GrFormNext
             onClick={handleNextPage}
             size={24}
-            className="text-gray-800 hover:text-gray-600 cursor-pointer"
+            className="text-gray-600 hover:text-gray-700 transition-all cursor-pointer"
           />
         </div>
 
@@ -156,7 +173,7 @@ export default function HeaderLayout() {
               arrow
             >
               <Avatar
-                src="https://duhocsunny.edu.vn/wp-content/uploads/2023/02/Anh-gai-xinh-Han-Quoc-.jpg"
+                src="/images/avatar-admin.jpg"
                 size={32}
                 className="text-gray-600 hover:text-gray-700 cursor-pointer transition-all"
               />
